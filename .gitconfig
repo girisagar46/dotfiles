@@ -1,3 +1,16 @@
+# This is Git's per-user configuration file.
+[user]
+
+	email = sagar.giri@bebit.com
+	name = sagar.giri
+
+[filter "lfs"]
+
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
@@ -77,6 +90,11 @@
 	sort = -committerdate
 
 [core]
+
+	# Custom
+	autocrlf = input
+  editor = nano
+  excludesfile = /Users/sagar-giri/.gitignore_global
 
 	# Use custom `.gitignore` and `.gitattributes`.
 	excludesfile = ~/.gitignore
@@ -181,3 +199,7 @@
 [init]
 
 	defaultBranch = main
+
+[pull]
+
+	rebase = false
